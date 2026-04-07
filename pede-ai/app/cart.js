@@ -1,18 +1,20 @@
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, TextInput } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 
 export default function Cart() {
   const { carrinho } = useLocalSearchParams();
+  const router = useRouter();
 
-  // estado local do carrinho
   const [itens, setItens] = useState(
     carrinho ? JSON.parse(carrinho) : []
   );
 
+  const [horario, setHorario] = useState('');
+  const [pagamento, setPagamento] = useState('');
+
   const total = itens.reduce((acc, item) => acc + item.preco, 0);
 
-  // 🗑️ remover item
   const removerItem = (index) => {
     const novoCarrinho = [...itens];
     novoCarrinho.splice(index, 1);
@@ -25,7 +27,18 @@ export default function Cart() {
       return;
     }
 
-    Alert.alert('Sucesso!', 'Pedido realizado!');
+    if (!horario || !pagamento) {
+      Alert.alert('Erro', 'Preencha horário e pagamento!');
+      return;
+    }
+
+    router.push({
+      pathname: '/status',
+      params: {
+        total: total,
+        horario: horario,
+      }
+    });
   };
 
   return (
@@ -55,6 +68,23 @@ export default function Cart() {
         Total: R$ {total.toFixed(2)}
       </Text>
 
+      {/* CHECKOUT */}
+      <Text style={styles.label}>Horário de retirada</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="12:30"
+        value={horario}
+        onChangeText={setHorario}
+      />
+
+      <Text style={styles.label}>Forma de pagamento</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Pix / Cartão / Dinheiro"
+        value={pagamento}
+        onChangeText={setPagamento}
+      />
+
       <TouchableOpacity style={styles.botao} onPress={finalizarPedido}>
         <Text style={styles.textoBotao}>Finalizar Pedido</Text>
       </TouchableOpacity>
@@ -76,7 +106,6 @@ const styles = StyleSheet.create({
   vazio: {
     textAlign: 'center',
     marginTop: 20,
-    color: '#08011e',
   },
   item: {
     backgroundColor: '#fff',
@@ -85,7 +114,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   nome: {
-    color: '#08011e',
     marginBottom: 5,
   },
   botaoRemover: {
@@ -96,12 +124,19 @@ const styles = StyleSheet.create({
   },
   textoRemover: {
     color: '#fff',
-    fontSize: 12,
   },
   total: {
     marginTop: 20,
     fontWeight: 'bold',
-    color: '#08011e',
+  },
+  label: {
+    marginTop: 15,
+  },
+  input: {
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 5,
   },
   botao: {
     backgroundColor: '#3d13f6',
@@ -112,6 +147,5 @@ const styles = StyleSheet.create({
   textoBotao: {
     color: '#fff',
     textAlign: 'center',
-    fontWeight: 'bold',
   },
 });
