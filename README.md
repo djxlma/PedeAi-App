@@ -37,17 +37,23 @@ O **PedeAí** é um aplicativo mobile desenvolvido com **React Native + Expo** q
 
 ## 📱 Capturas de Tela
 
-| Tela Inicial                              | Cardápio                               |
-| ----------------------------------------- | -------------------------------------- |
-| ![Tela Inicial](./assets/screenshots/telainicial.jpg) | ![Cardápio](./assets/screenshots/cardapio.jpg) |
+| Tela Inicial | Cardápio |
+| --- | --- |
+| ![Tela Inicial](./pede-ai/assets/screenshots/telaInicial.jpg) | ![Cardápio](./pede-ai/assets/screenshots/cardapio.jpg) |
 
-| Carrinho                               | Status do Pedido                             |
-| -------------------------------------- | -------------------------------------------- |
-| ![Carrinho](./assets/screenshots/carrinho.jpg) | ![Status](./assets/screenshots/statusDoPedido.jpg) |
+| Carrinho | Status do Pedido |
+| --- | --- |
+| ![Carrinho](./pede-ai/assets/screenshots/carrinho.jpg) | ![Status](./pede-ai/assets/screenshots/statusDoPedido.jpg) |
 
-| Pedido Concluído                              |
-| --------------------------------------------- |
-| ![Pedido Concluído](./assets/screenshots/pedidoConcluido.jpg) |
+| Pedido Concluído |
+| --- |
+| ![Pedido Concluído](./pede-ai/assets/screenshots/pedidoConcluido.jpg) |
+
+---
+
+## 🎥 Demonstração
+
+(https://www.youtube.com/shorts/afwWdeU9ymQ)
 
 ---
 
