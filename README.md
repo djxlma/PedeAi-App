@@ -39,21 +39,15 @@ O **PedeAí** é um aplicativo mobile desenvolvido com **React Native + Expo** q
 
 | Tela Inicial                              | Cardápio                               |
 | ----------------------------------------- | -------------------------------------- |
-| ![Tela Inicial](fiap-mdi-cp1-pedeai\pede-ai\assets\screenshots\telaInicial.jpg) | ![Cardápio](fiap-mdi-cp1-pedeai\pede-ai\assets\screenshots\cardapio.jpg) |
+| ![Tela Inicial](./assets/screenshots/telainicial.jpg) | ![Cardápio](./assets/screenshots/cardapio.jpg) |
 
 | Carrinho                               | Status do Pedido                             |
 | -------------------------------------- | -------------------------------------------- |
-| ![Carrinho](fiap-mdi-cp1-pedeai\pede-ai\assets\screenshots\carrinho.jpg) | ![Status](fiap-mdi-cp1-pedeai\pede-ai\assets\screenshots\statusDoPedido.jpg) |
+| ![Carrinho](./assets/screenshots/carrinho.jpg) | ![Status](./assets/screenshots/statusDoPedido.jpg) |
 
 | Pedido Concluído                              |
 | --------------------------------------------- |
-| ![Pedido Concluído](fiap-mdi-cp1-pedeai\pede-ai\assets\screenshots\pedidoConcluido.jpg) |
-
----
-
-## 🎥 Demonstração
-
-(https://www.youtube.com/shorts/afwWdeU9ymQ)
+| ![Pedido Concluído](./assets/screenshots/pedidoConcluido.jpg) |
 
 ---
 
